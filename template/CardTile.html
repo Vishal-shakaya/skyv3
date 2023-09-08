@@ -1,0 +1,121 @@
+{% load static %}
+<div class="container">
+  <br />
+  <div class="row justify-content-end">
+    <button class="my_back_btn">Back</button>
+  </div>
+
+  <div id="search_block">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <input type="text" placeholder="serach" class="search_card_field" />
+      </div>
+
+      <!-- <div class="col-1">
+
+          </div> -->
+      <div class="col-1">
+        <button class="search_btn" type="Submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card ownder  -->
+<div id="business_list_section">
+  <div class="container">
+    <div class="bus_row">
+      <div class="row">
+        <div class="col-2 justify-content-center">
+          <img
+            src="{{card.business_logo.url}}"
+            alt="logo"
+            class="my-card-logo"
+            id="card_logo"
+          />
+          <br />
+          <span class="owner-name">{{card.name}}</span>
+        </div>
+
+        <div class="col-9">
+          <div class="row">
+            <div class="col-7">
+              <p class="bus-name">{{card.business_heading}}</p>
+            </div>
+            <div class="col-4">
+              <i class="fa-solid fa-circle-check" id="verify-icon"></i>
+              <b>GST</b>: <span><b>{{card.gst_number}}</b></span>
+            </div>
+          </div>
+
+          <!-- Contact Row  -->
+          <div class="row d-flex justify-content-start">
+            <div class="col-3">
+              <i
+                class="fa-solid fa-phone fa-sm ml-1"
+                style="color: rgba(50, 50, 255, 0.822)"
+              ></i>
+              <b class="contact-info">{{card.number}}</b>
+            </div>
+            <div class="col-3">
+              <i class="fa-brands fa-whatsapp" style="color: teal"></i>
+              <b class="contact-info">{{card.whats_app_number}}</b>
+            </div>
+            <!-- <div class="col-2"></div> -->
+            <div class="col-5">
+              <i class="fa-regular fa-envelope" id="card-icon"></i>
+              <b class="contact-info">{{card.email}}</b>
+            </div>
+          </div>
+          <!-- Social Meia Icon  -->
+          <div class="row mt-4">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-1">
+              <a
+                href="{{card.insta}}"
+                class="card-social-icon card-social-icon-insta"
+              >
+                <i class="fa-brands fa-instagram fa-sm" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="col-1">
+              <a
+                href=" {{card.twitter}}"
+                class="card-social-icon card-social-twitter"
+              >
+                <i class="fa-brands fa-twitter fa-sm" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="col-1">
+              <a href="{{card.facebook}}" class="card-social-icon">
+                <i class="fa-brands fa-facebook fa-sm" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="col-1">
+              <a
+                href=" {{card.youtube}}"
+                class="card-social-icon card-social-icon-youtube"
+              >
+                <i class="fa-brands fa-youtube fa-sm" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="col-2"></div>
+            <div class="col-4 mt-1">
+              <i class="fa-solid fa-globe" id="card-icon"></i>
+              <a href="{{card.website}}" target="_blank">
+                <b class="contact-info" id="card_weburl"> Visit Site</b>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <a href="{% url 'card_detail' pk=card.pk %}">
+            <button class="view-button">view</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

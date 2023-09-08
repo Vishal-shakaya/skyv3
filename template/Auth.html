@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token }}" />
+    <title>SKYCARD | LOGIN</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"
+    />
+    <!-- Default theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+    />
+    <!-- Default theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"
+    />
+    <link rel="stylesheet" href="{% static '/css/auth.css' %}" />
+  </head>
+  <body>
+    <input type="hidden" value="{% url 'signup' %}" id="signup_url" />
+    <input type="hidden" value="{% url 'login' %}" id="login_url" />
+    <input
+      type="hidden"
+      value="{% url 'create_card' pk=1 %}"
+      id="create_card"
+    />
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="auth_head_text">SAY HYE! TO SKY</p>
+      </div>
+    </div>
+
+    <div class="my_container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>Create Account</h1>
+          <div class="social-container"></div>
+          <input type="text" placeholder="Name" id="userUsername" />
+          <input type="text" placeholder="Password" id="txtPassword" />
+          <div id="strengthMessage"></div>
+          <input type="password" placeholder="Confirm" id="confirmPassword" />
+          <button onclick="Signup();">Sign Up</button>
+
+          <hr />
+          <span class="password_match_error" id="pass_match"></span>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <!-- <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
+          </div>
+          <!-- <span>or use your account</span> -->
+          <input type="email" placeholder="Email" id="loginUsername" />
+          <input type="password" placeholder="Password" id="loginPassword" />
+          <a href="#">Forgot your password?</a>
+          <button onclick="Login()">Sign In</button>
+          <hr />
+          <span class="login_password_match_error" id="login_error_mang"></span>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="{% static '/js/Auth.js' %}"></script>
+  </body>
+</html>

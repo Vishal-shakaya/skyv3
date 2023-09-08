@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Section 9 Team  -->
+<div id="sec-9">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <img
+          src="{% static '/img/founder.png' %}"
+          alt="ceo"
+          class="founder-img"
+        />
+      </div>
+      <div class="col-6">
+        <p class="founder-head-text">What we do</p>
+        <p class="founder-head-subtext">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
+          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
+          molestias architecto voluptate
+        </p>
+
+        <div class="row">
+          <div class="sub-container">
+            <div class="content">
+              <form class="subscription">
+                <input
+                  class="add-email"
+                  type="email"
+                  placeholder="subscribe@news.now"
+                />
+                <button class="submit-email" type="button">
+                  <span class="before-submit">Subscribe</span>
+                  <span class="after-submit">Thank you for subscribing!</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Icon -->
+        <div class="center">
+          <div id="social-test">
+            <ul class="social">
+              <li>
+                <a
+                  href="https://www.facebook.com/skytechno.org/"
+                  target="_blank"
+                  class="first-social-link"
+                >
+                  <i
+                    class="fa-brands fa-facebook-f fa-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.instagram.com/skytechno1100/"
+                  class="first-social-link"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-instagram fa-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://twitter.com/skytechno_org"
+                  class="first-social-link"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-twitter fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/skytechno00/?viewAsMember=true"
+                  target="_blank"
+                  class="first-social-link"
+                >
+                  <i class="fa-brands fa-linkedin fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCRvdXrgw-yt4WvuGjBy9yDw"
+                  target="_blank"
+                  class="first-social-link"
+                >
+                  <i class="fa-brands fa-youtube fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

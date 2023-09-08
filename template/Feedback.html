@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Section 4 Testimonial  -->
+<div id="sec-5">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="sec-5-head-text">Testimonial</p>
+      </div>
+      <div class="row justify-content-center">
+        <p class="sec-5-subhead-text">Our Happy Clients</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="container">
+        <div class="my_slick">
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/clients/1.png' %}"
+              alt="img1"
+            />
+          </div>
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/clients/2.png' %}"
+              alt="img2"
+            />
+          </div>
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/clients/3.png' %}"
+              alt="img3"
+            />
+          </div>
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/ceo-profile.png' %}"
+              alt="img4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

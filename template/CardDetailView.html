@@ -1,0 +1,230 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Card Detail View -->
+<div class="sec-13">
+  <div class="det-cover-photo">
+    <div class="container">
+      <div class="row justify-content-center">
+        <span class="detail-page-stablish-year"
+          >{{card.stablish_year}} Years of Excellence</span
+        >
+      </div>
+      <div class="row justify-content-center">
+        <img
+          src="{{card.profile_image.url}} "
+          alt="owenr image"
+          class="det-owner-img"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- owner Photo -->
+<div id="sec-14">
+  <div class="continer">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="det-card-block">
+          <div class="flip-container centered">
+            <div class="flipper">
+              <div class="front">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <img
+                      src="{{card.business_logo.url}}"
+                      alt="logo"
+                      class="my-card-logo"
+                      id="card_logo"
+                    />
+                  </div>
+                  <div class="row justify-content-center">
+                    <span class="card-front-text" id="card_position"
+                      >{{card.position}}</span
+                    >
+                  </div>
+                  <div class="row justify-content-center">
+                    <span class="card-front-text" id="card_username">
+                      {{card.name}}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="row">
+                  <!-- qr ana tag -->
+                  <div class="col-4">
+                    <div class="row justify-content-center">
+                      <img
+                        src="{% static '/img/qr.jpg' %}"
+                        alt="qrcode"
+                        class="card-qr"
+                      />
+                    </div>
+                    <div class="row justify-content-center">
+                      <span class="start-sky-text"
+                        >{{card.business_name}}
+                      </span>
+                      <!-- <span class="end-sky-text"> TECHNO</span> -->
+                    </div>
+
+                    <div class="row">
+                      <span class="card-tag-line"> {{card.tagline}} </span>
+                    </div>
+
+                    <div class="row justify-content-center">
+                      <a href="{{card.insta}}" class="card-social-icon">
+                        <i
+                          class="fa-brands fa-instagram fa-sm"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+
+                      <a href=" {{card.twitter}}" class="card-social-icon">
+                        <i
+                          class="fa-brands fa-twitter fa-sm"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+
+                      <a href="{{card.facebook}}" class="card-social-icon">
+                        <i
+                          class="fa-brands fa-facebook fa-sm"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+
+                      <a href="{{card.youtube.url}}" class="card-social-icon">
+                        <i
+                          class="fa-brands fa-youtube fa-sm"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Main Content -->
+                  <div class="col-1"></div>
+                  <div class="col-6">
+                    <div class="row">
+                      <span class="card-bus-name" id="card_business_name">
+                        {{card.business_heading}}
+                      </span>
+                    </div>
+                    <br />
+                    <div class="row justify-content-left">
+                      <i class="fa-solid fa-phone" id="card-icon"></i>
+                      <b class="my-card-infod" id="card_basic_number"
+                        >{{card.number}}</b
+                      >
+                    </div>
+                    <div class="row justify-content-left">
+                      <i class="fa-brands fa-whatsapp" id="card-icon"></i>
+                      <b class="my-card-infod" id="card_whatspp_number"
+                        >{{card.whats_app_number}}</b
+                      >
+                    </div>
+
+                    <div class="row justify-content-left">
+                      <i class="fa-solid fa-globe" id="card-icon"></i>
+                      <b class="my-card-infod" id="card_weburl"
+                        >{{card.website}}</b
+                      >
+                    </div>
+                    <div class="row justify-content-left">
+                      <i class="fa-regular fa-envelope" id="card-icon"></i>
+                      <b class="my-card-infod" id="card_user_email"
+                        >{{card.email}}</b
+                      >
+                    </div>
+                    <div class="row justify-content-left">
+                      <i class="fa-solid fa-location-pin" id="card-icon"></i>
+                      <b class="my-card-infod" id="card_address"
+                        >{{card.address}}</b
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Info -->
+      <div class="col-6">
+        <div class="det-bus-detail">
+          <div class="row">
+            <span class="det-card-bus-name" id="card_business_name">
+              {{card.business_heading}}
+            </span>
+          </div>
+          <div class="row">
+            <i class="" id="det-card-icon">GST</i>
+            <b class="del-my-card-infod" id="card_basic_number"
+              >{{card.gst_number}}</b
+            >
+          </div>
+          <div class="row">
+            <i class="fa-solid fa-phone" id="det-card-icon"></i>
+            <b class="del-my-card-infod" id="card_basic_number"
+              >{{card.number}}</b
+            >
+          </div>
+          <div class="row">
+            <i class="fa-solid fa-phone" id="det-card-icon"></i>
+            <b class="del-my-card-infod" id="card_basic_number"
+              >{{card.whats_app_number}}</b
+            >
+          </div>
+          <div class="row">
+            <i class="fa-solid fa-globe" id="det-card-icon"></i>
+            <b class="del-my-card-infod" id="card_weburl">{{card.website}}</b>
+          </div>
+          <div class="row">
+            <i class="fa-regular fa-envelope" id="det-card-icon"></i>
+            <b class="del-my-card-infod" id="card_user_email">{{card.email}}</b>
+          </div>
+          <div class="row">
+            <i class="fa-solid fa-location-pin" id="det-card-icon"></i>
+            <b class="del-my-card-infod" id="card_address">{{card.address}}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Share Card Section  -->
+<div class="container">
+  <div id="del-share-icon-block">
+    <div class="row justify-content-center">
+      <div class="col-2">
+        <i class="fa-solid fa-phone" id="print-call-icon"></i>
+      </div>
+      <div class="col-2">
+        <i class="fa-solid fa-print" id="print-print-icon"></i>
+      </div>
+      <div class="col-2">
+        <i class="fa-solid fa-share" id="print-share-icon"></i>
+      </div>
+      <div class="col-2">
+        <i class="fa-brands fa-whatsapp" id="print-whatsapp-icon"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Company Section -->
+<div id="del-about-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <p class="about-sec-head-text">ABOUT</p>
+    </div>
+    <div class="row justify-content-center">
+      <div>
+        <p class="del-bus-content">{{card.business_description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

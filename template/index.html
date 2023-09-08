@@ -1,0 +1,518 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div id="sec-1">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="my-main-heading">WE ARE EXCLUSIVE</div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="my-main-subheading">
+        AGENCY THAT <span class="special-text">NOT</span> CREATIVE
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Description  -->
+  <div class="container" id="comp-detail-cont">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <img
+          src="{% static '/img/animation.gif'%}"
+          alt="animation"
+          class="my-animation"
+        />
+      </div>
+
+      <div class="col-6">
+        <p class="comp-desc">
+          Increase company profits and reduce overhead costs by transforming
+          your business online.
+        </p>
+        <p class="comp-hero-text">Progress 1 2 3 4 5...........++</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKY CARD SECTION  -->
+<div id="sec-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <p class="skycard-sec-head-text">SKY CARD IS FIRST PRIORITY</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <p class="skycard-sec-subhead-text">Indias First Digital Card</p>
+    </div>
+
+    <!-- Create Button  -->
+    <div class="row justify-content-center">
+      <a href="{% url 'auth' %}">
+        <button class="create-card-btn">Create Now</button>
+      </a>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <img
+          src="{% static '/img/cover1.gif'%}"
+          alt="cover"
+          class="skycard-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="why-sky-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="skycard-why-text">WHY SKY</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="skycard-why-desc">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3 On demand  -->
+<div id="sec-3">
+  <div class="container">
+    <div class="row justify-content-center">
+      <p class="sec-3-head-text">ON DEMAND SERVICES</p>
+    </div>
+    <div class="row justify-content-center">
+      <p class="sec-3-subhead-text">First Time In India</p>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <img
+        src="{% static '/img/sky-ondemand.gif'%}"
+        alt=""
+        class="on-demand-img"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Section 4 Intro video  -->
+<div id="sec-4">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="sec-4-head-text">WORK WITH PROS</p>
+      </div>
+      <div class="row justify-content-center">
+        <p class="sec-4-subhead-text">Keep It Simple</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="our_adv"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4 Testimonial  -->
+<div id="sec-5">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="sec-5-head-text">Testimonial</p>
+      </div>
+      <div class="row justify-content-center">
+        <p class="sec-5-subhead-text">Our Happy Clients</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="container">
+        <div class="my_slick">
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/clients/1.png'%}"
+              alt="img1"
+            />
+          </div>
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/clients/2.png'%}"
+              alt="img2"
+            />
+          </div>
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/clients/3.png'%}"
+              alt="img3"
+            />
+          </div>
+          <div class="testi_item">
+            <img
+              class="test_img"
+              src="{% static '/img/ceo-profile.png'%}"
+              alt="img4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6 Proof  -->
+<div id="sec-6">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="sec-6-head-text">RESULTS WE DELIVERD</p>
+      </div>
+      <div class="row justify-content-center">
+        <p class="sec-6-subhead-text">Proof of Concept</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="container">
+        <div class="card-carousel">
+          <div class="card" id="1">
+            <div class="image-container"></div>
+            <!-- <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p> -->
+          </div>
+          <div class="card" id="2">
+            <div class="image-container"></div>
+            <!-- <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p> -->
+          </div>
+          <div class="card" id="3">
+            <div class="image-container"></div>
+            <!-- <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p> -->
+          </div>
+          <div class="card" id="4">
+            <div class="image-container"></div>
+            <!-- <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p> -->
+          </div>
+          <div class="card" id="5">
+            <div class="image-container"></div>
+            <!-- <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p> -->
+          </div>
+        </div>
+        <a href="#" class="visuallyhidden card-controller"
+          >Carousel controller</a
+        >
+      </div>
+      <!-- 
+<h2>Check out <a target="_blank" href="https://codepen.io/WillyW/pen/RwRrvjv">Circle Carousel</a></h2> -->
+    </div>
+  </div>
+</div>
+
+<!-- Section 7 our Clients  -->
+
+<div id="sec-7">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="our-clients-brandname">
+        <div class="container">
+          <section class="customer-logos slider">
+            <div class="slide">
+              <img src="{% static '/img/brands/stepup.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/stepup.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/stepup.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/stepup.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/stepup.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/stepup.png'%}" />
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 8 Our Story  -->
+<div id="sec-8">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="sec-8-head-text">OUR STORY</p>
+      </div>
+      <div class="row justify-content-center">
+        <p class="sec-8-subhead-text">Why We Start</p>
+        <div class="row justify-content-center">
+          <div class="our_story-bg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 9 Team  -->
+<div id="sec-9">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <img
+          src="{% static '/img/founder.png' %}"
+          alt="ceo"
+          class="founder-img"
+        />
+      </div>
+      <div class="col-6">
+        <p class="founder-head-text">What we do</p>
+        <p class="founder-head-subtext">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
+          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
+          molestias architecto voluptate
+        </p>
+
+        <div class="row">
+          <div class="sub-container">
+            <div class="content">
+              <form class="subscription">
+                <input
+                  class="add-email"
+                  type="email"
+                  placeholder="subscribe@news.now"
+                />
+                <button class="submit-email" type="button">
+                  <span class="before-submit">Subscribe</span>
+                  <span class="after-submit">Thank you for subscribing!</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Icon -->
+        <div class="center">
+          <div id="social-test">
+            <ul class="social">
+              <li>
+                <a
+                  href="https://www.facebook.com/skytechno.org/"
+                  target="_blank"
+                  class="first-social-link"
+                >
+                  <i
+                    class="fa-brands fa-facebook-f fa-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.instagram.com/skytechno1100/"
+                  class="first-social-link"
+                  target="_blank"
+                >
+                  <i
+                    class="fa-brands fa-instagram fa-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://twitter.com/skytechno_org"
+                  class="first-social-link"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-twitter fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/skytechno00/?viewAsMember=true"
+                  target="_blank"
+                  class="first-social-link"
+                >
+                  <i class="fa-brands fa-linkedin fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCRvdXrgw-yt4WvuGjBy9yDw"
+                  target="_blank"
+                  class="first-social-link"
+                >
+                  <i class="fa-brands fa-youtube fa-sm" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 10  Bottom Bar -->
+
+<div id="sec-10">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-3">
+        <img
+          src="{% static './img/icon.png' %}"
+          alt="sky icon"
+          class="sky-icon"
+        />
+        <span class="bottom-brand-first-text">SKY</span>
+        <span class="bottom-brand-second-text">TECHNO</span>
+
+        <p class="bottom-sky-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+          voluptatum laborum
+        </p>
+      </div>
+
+      <div class="col-3">
+        <div class="bottom-menu-links-head">Menu</div>
+
+        <div class="bottom-menu-sub-links">
+          <ul class="list-unstyled text-muted">
+            <a href="{% url 'auth' %}"><li class="bottom-list">Sky Card</li></a>
+            <a href="{% url 'on_demand' %}">
+              <li class="bottom-list">On Demand</li></a
+            >
+            <a href="{% url 'our_story' %}"
+              ><li class="bottom-list">Our Story</li></a
+            >
+            <a href="{% url 'our_work' %}"
+              ><li class="bottom-list">Our Work</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="bottom-imp-links-head">Important Links</div>
+
+        <div class="bottom-menu-sub-links">
+          <ul class="list-unstyled text-muted">
+            <li
+              class="bottom-list"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              data-whatever="@getbootstrap"
+            >
+              Contact
+            </li>
+
+            <a href="{% url 'about' %}"><li class="bottom-list">About</li></a>
+            <a href="{% url 'campaing' %}"
+              ><li class="bottom-list">Campaign</li></a
+            >
+            <a href="{% url 'feedback' %}"
+              ><li class="bottom-list">Feedback</li></a
+            >
+
+            <!-- <li class="bottom-list">Clients</li> -->
+            <!-- <li class="bottom-list">Team</li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="bottom-cont-links-head">Connect Us</div>
+
+        <div class="bottom-menu-sub-links">
+          <ul class="list-unstyled text-muted">
+            <li class="bottom-list">
+              <span class="cout-code">+91</span>
+              <span class="phone-no">7065121120</span>
+            </li>
+            <li class="bottom-list">
+              <span class="cout-code">+91</span>
+              <span class="phone-no">7011294134</span>
+            </li>
+            <li class="bottom-list phone-no">contact@skytechno.org</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-2">
+            <a href="https://www.facebook.com/skytechno.org/" target="_blank">
+              <i
+                class="fa-brands fa-facebook-f fa-sm"
+                aria-hidden="true"
+                id="my-social-icon"
+              ></i>
+            </a>
+          </div>
+          <div class="col-2">
+            <a href="https://www.instagram.com/skytechno1100/" target="_blank">
+              <i
+                class="fa-brands fa-instagram fa-sm"
+                aria-hidden="true"
+                id="my-social-icon"
+              ></i>
+            </a>
+          </div>
+          <div class="col-2">
+            <a
+              href="https://twitter.com/skytechno_org
+          "
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-twitter fa-sm"
+                aria-hidden="true"
+                id="my-social-icon"
+              ></i>
+            </a>
+          </div>
+          <div class="col-2">
+            <a
+              href="https://www.linkedin.com/company/skytechno00/?viewAsMember=true"
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-linkedin fa-sm"
+                aria-hidden="true"
+                id="my-social-icon"
+              ></i>
+            </a>
+          </div>
+          <div class="col-2">
+            <a
+              href="https://www.youtube.com/channel/UCRvdXrgw-yt4WvuGjBy9yDw"
+              target="_blank"
+            >
+              <i
+                class="fa-brands fa-youtube fa-sm"
+                aria-hidden="true"
+                id="my-social-icon"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
