@@ -9,6 +9,7 @@ import json
 from .utils import ResponseBack, ValidateCardData, UpdateCard, CreateCard
 from .models import SkyCard
 from .forms import CreateCardForm
+from django.db.models import Q
 # Create your views here.
 
 
@@ -42,13 +43,15 @@ def CardListView(request):
     if request.user.is_authenticated:
         if request.POST:
             print(request.POST)
-            carList = []
+
             search_value = request.POST['search_value']
-            is_exist = SkyCard.objects.filter(number=search_value)
+            is_exist = SkyCard.objects.filter(Q(number__contains=search_value)
+                                              | Q(business_name__contains=search_value)
+                                              | Q(name__contains=search_value)
+                                              )
+            # print(is_exist)
             if is_exist:
-                cards = SkyCard.objects.get(number=search_value)
-                carList.append(cards)
-                return render(request, template_name='CardSearchView.html', context={'cards': carList})
+                return render(request, template_name='CardSearchView.html', context={'cards': is_exist})
             else:
                 cards = SkyCard.objects.all()
                 return render(request, template_name='CardSearchView.html', context={'cards': cards})

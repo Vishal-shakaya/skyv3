@@ -2,7 +2,9 @@
 <div class="container">
   <br />
   <div class="row justify-content-end">
-    <button class="my_back_btn">Back</button>
+    <a href="{% url 'home_view' %}">
+      <button class="my_back_btn">Home</button>
+    </a>
   </div>
 
 <form method="POST" action="{% url 'card_list'%}">
@@ -10,7 +12,7 @@
   <div id="search_block">
     <div class="row justify-content-center">
       <div class="col-8">
-        <input type="text" placeholder="serach" class="search_card_field"  name="search_value" />
+        <input type="text" placeholder="search by  number , business name" class="search_card_field"  name="search_value" />
       </div>
       <div class="col-1">
         <button class="search_btn" type="Submit">Submit</button>
