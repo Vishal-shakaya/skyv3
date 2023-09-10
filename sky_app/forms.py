@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import SkyCard
+from .models import SkyCard, SureveyQuest
 from django import forms
 from django.forms import ModelForm
 
@@ -21,3 +21,9 @@ class CreateCardForm(ModelForm):
                   'tagline', 'tag', 'business_description', 'state', 'city', 'country',
                   'pincode', 'address'
                   ]
+
+
+class SurveyForm(ModelForm):
+    class Meta:
+        model = SureveyQuest
+        exclude = ('solution', 'total_score')

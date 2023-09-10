@@ -6,9 +6,9 @@ from sky_app.forms import RegistorUser
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from .utils import ResponseBack, ValidateCardData, UpdateCard, CreateCard
-from .models import SkyCard
-from .forms import CreateCardForm
+from .utils import ResponseBack, ValidateCardData, UpdateCard, CreateCard, surveyFields
+from .models import SkyCard, Blog
+from .forms import CreateCardForm, SurveyForm
 from django.db.models import Q
 # Create your views here.
 
@@ -95,7 +95,7 @@ def AuthView(request):
         return render(request, template_name='Auth.html', )
 
 
-@ csrf_exempt
+@csrf_exempt
 def SignupHandler(request):
     try:
         if request.POST:
@@ -120,7 +120,7 @@ def SignupHandler(request):
         return ResponseBack(message='something went wrong', data='', response='fail')
 
 
-@ csrf_exempt
+@csrf_exempt
 def LoginHandler(request):
     try:
         if request.POST:
@@ -143,7 +143,7 @@ def LoginHandler(request):
         return ResponseBack(response='fail', message='something went wrong', data='')
 
 
-@ csrf_exempt
+@csrf_exempt
 def CreateCardHandler(request):
     data = request.POST
 
@@ -192,7 +192,7 @@ def CreateCardHandler(request):
             return JsonResponse(resp)
 
 
-@ csrf_exempt
+@csrf_exempt
 def LogoutUser(request):
     try:
         logout(request)
@@ -201,7 +201,7 @@ def LogoutUser(request):
         return ResponseBack(message='unable to logout user', data='', response='fail')
 
 
-@ csrf_exempt
+@csrf_exempt
 def DeleteCardManager(request, pk):
     try:
         obj = SkyCard.objects.get(pk=pk)
@@ -209,3 +209,27 @@ def DeleteCardManager(request, pk):
         return ResponseBack(message='Card Deleted', data='', response='success')
     except print(0):
         return ResponseBack(message='Unable to Delete Card', data='', response='fail')
+
+
+def BlogView(request):
+    blogs = Blog.objects.all()
+    return render(request, template_name='BlogView.html', context={'blogs': blogs})
+
+
+def BlogDetailView(request, pk):
+    is_exist = Blog.objects.filter(pk=pk)
+    if is_exist:
+        blog = Blog.objects.get(pk=pk)
+        return render(request, template_name='BlogDetail.html', context={'blog': blog})
+    else:
+        return JsonResponse({'soemthing Went Wrong': 'error'})
+
+
+def SurveyView(request):
+    if request.POST:
+        form = SurveyForm(request.POST)
+        form.save()
+    return render(
+        request,
+        template_name='SurveyView.html',
+        context={"fields": surveyFields})

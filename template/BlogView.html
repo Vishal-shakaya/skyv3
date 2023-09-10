@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/Blog.css' %}" />
+
+<div class="row justify-content-center">
+  <p class="blog-subhead-text">Blog Stories</p>
+</div>
+
+<div class="container">
+  {% for blog in blogs %}
+
+  <div class="card">
+    <div class="card-header">
+      <img src="{{blog.thumbnail.url}}" alt="rover" />
+    </div>
+    <div class="card-body">
+      <span class="tag tag-teal">{{blog.tag}}</span>
+      <a href=" {% url 'blog_detail_view' pk=blog.pk %}">
+        <h4>{{blog.heading|truncatechars:80}}</h4>
+      </a>
+      <p>{{blog.content.html|safe|truncatechars:250}}</p>
+      <div class="user">
+        <img src="{{blog.thumbnail.url}}" alt="user" />
+        <div class="user-info">
+          <b class="blog-timestamp">{{blog.timestamp}}</b>
+          <small>{{blog.creaded_by}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script src="{% static 'js/Blog.js' %}"></script>
+{% endblock content %}

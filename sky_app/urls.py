@@ -15,6 +15,8 @@ urlpatterns = [
     path('our-story/', views.OurStoryView, name='our_story'),
     path('on-demnad/', views.OnDemandView, name='on_demand'),
     path('about/', views.AboutView, name='about'),
+    path('blog/', views.BlogView, name='blog_view'),
+    path('blog_detail/<pk>/', views.BlogDetailView, name='blog_detail_view'),
     path('campaign/', views.CampaignView, name='campaing'),
     path('authview/', views.AuthView, name='auth'),
     path('signup/', views.SignupHandler, name='signup'),
@@ -23,6 +25,9 @@ urlpatterns = [
     path('logout/', views.LogoutUser, name='logout_user'),
     path('create-card-handler/', views.CreateCardHandler,
          name='create_card_handler'),
+    path('survey-view/', views.SurveyView, name='survey_view'),
+
+
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

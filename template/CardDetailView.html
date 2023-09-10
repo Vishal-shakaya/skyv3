@@ -219,17 +219,19 @@
   <div id="del-share-icon-block">
     <div class="row justify-content-center">
       <div class="col-2">
-        <i class="fa-solid fa-phone" id="print-call-icon"></i>
+        <a href="tel:91{{card.phone}}">
+          <i class="fa-solid fa-phone" id="print-call-icon"></i>
+        </a>
       </div>
       <div class="col-2">
-        <i class="fa-solid fa-print" id="print-print-icon"></i>
+        <a href="{{card.website}}" target="_blank">
+          <i class="fa-solid fa-globe" id="print-print-icon"></i>
+        </a>
       </div>
       <div class="col-2">
         <i class="fa-solid fa-share" id="print-share-icon"></i>
       </div>
-      <div class="col-2">
-        <i class="fa-brands fa-whatsapp" id="print-whatsapp-icon"></i>
-      </div>
+      <div class="col-2">{% include 'WhatsAppShare.html' %}</div>
     </div>
   </div>
 </div>

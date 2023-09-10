@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/Blog.css' %}" />
+
+<div id="block_detail_cont">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <h1 class="det_blog_heading">{{blog.heading}}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11">
+          {% if blog.thumbnail.url %}
+          <img id="thumbnail_img" src="{{blog.thumbnail.url}}" alt="cover" />
+
+          {% else %}
+
+          <img
+            id="thumbnail_img"
+            src="https://images8.alphacoders.com/132/1325725.png"
+            alt="cover"
+          />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Detail -->
+  <div class="det_row">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3">
+        <span class="det_blog_secd_text" style="margin-left: 1.5rem"
+          >{{blog.timestamp|date:"D,d-m ,Y"}} |
+        </span>
+        <span class="det_blog_secd_text">
+          Written by : {{blog.created_by}}
+        </span>
+      </div>
+      <div class="col-1"></div>
+
+      <div class="col-4">
+        <div class="row">
+          <div class="col-1">
+            <button class="share-button facebook">
+              <i class="fa-brands fa-facebook-f fa-md" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-1">
+            <button class="share-button pinterest">
+              <i class="fa-brands fa-pinterest fa-md" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-1">
+            <button class="share-button linkedin">
+              <i class="fa-brands fa-linkedin fa-md" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-1">
+            <button class="share-button twitter">
+              <i class="fa-brands fa-twitter fa-md" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-1">
+            <button class="share-button whatsapp">
+              <i class="fa-brands fa-whatsapp fa-md" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- content -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-1"></div>
+
+      <div class="col-11">
+        <span id="det_blog_content">{{blog.content.html|safe}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/Blog.js' %}"></script>
+{% endblock content %}

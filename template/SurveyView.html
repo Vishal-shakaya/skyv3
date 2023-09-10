@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/survey.css '%}" />
+{% endblock style %} {% block content %}
+<div id="suv_section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-5">
+        <img
+          class="survey_head_img"
+          src="https://www.pinclipart.com/picdir/middle/91-913720_types-of-auditing-services-cartoon-downloadable-online-forms.png"
+          alt="survye_img"
+        />
+      </div>
+      <div class="col-7">
+        <!-- Heading -->
+        <div class="row">
+          <span class="suv_head_text">Surviey Section for Business</span>
+        </div>
+        <!-- Description -->
+
+        <div class="row">
+          <span class="suv_subhead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            voluptatum facilis nisi? Possimus corrupti quidem at blanditiis
+            nulla, exercitationem modi, totam porro dicta nobis natus vitae
+            accusamus voluptatum error aspernatur? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Aut voluptatum facilis nisi? Possimus
+            corrupti quidem at blanditiis nulla, exercitationem modi, totam
+            porro dicta nobis natus vitae accusamus voluptatum error aspernatur?
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Survey section 1  -->
+  <form action="{% url 'survey_view' %}" method="POST">
+    {% csrf_token %}
+  <div class="container">
+    <input type="text" placeholder="Your Email" name="email"  required  class="suv_email"/>
+    <hr />
+
+    {% for field in fields %} 
+    <div>
+    {% include 'SurveyQuest.html' with title=field.title subtitle=field.subtitle field_name1=field.field_name1 field_name2=field.field_name2 %}
+      
+    </div>
+    {% endfor %}
+    <div class="row justify-content-center">
+      <input type="submit" name="submit" value="submit"  class="suv_submit_btn">
+      <div/>
+  </form>
+  
+
+  
+  </div>
+</div>
+<script src="{% static 'Survey.js' %}"></script>
+{% endblock content %}
