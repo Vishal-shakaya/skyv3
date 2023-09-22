@@ -47,9 +47,10 @@
 
     <!-- Create Button  -->
     <div class="row justify-content-center">
-      <a href="{% url 'auth' %}">
+      <!-- <a href="{% url 'auth' %}">
         <button class="create-card-btn">Create Now</button>
-      </a>
+      </a> -->
+      <h2>Coming soon...</h2>
     </div>
 
     <div class="container-fluid">
@@ -72,10 +73,12 @@
     <div class="container">
       <div class="row justify-content-center">
         <p class="skycard-why-desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book
+          Sky Card is a cutting-edge digital platform designed to empower
+          businesses of all sizes to create, customize, and share their own
+          digital cards, transforming the way they connect with customers and
+          fellow entrepreneurs. In an increasingly digital world, having a
+          compelling online presence is paramount, and Sky Card makes this
+          process streamlined and accessible for everyone.
         </p>
       </div>
     </div>
@@ -121,7 +124,7 @@
   </div>
 </div>
 
-<!-- Section 4 Testimonial  -->
+<!-- Section 5 Testimonial  -->
 <div id="sec-5">
   <div class="container-fluid" id-="sec-5-con" style="position: relative">
     <div class="container">
@@ -148,7 +151,7 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a class="btn btn-primary card-btn">Go somewhere</a>
+              <a class="btn btn-primary" id="card-btn1">Go somewhere</a>
             </div>
           </div>
           <div class="card mt-5" style="width: 21rem">
@@ -164,7 +167,7 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a class="btn btn-primary card-btn">Go somewhere</a>
+              <a class="btn btn-primary" id="card-btn2">Go somewhere</a>
             </div>
           </div>
           <div class="card mt-5" style="width: 21rem">
@@ -180,7 +183,7 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a class="btn btn-primary card-btn">Go somewhere</a>
+              <a class="btn btn-primary" id="card-btn3">Go somewhere</a>
             </div>
           </div>
           <div class="card mt-5" style="width: 21rem">
@@ -196,7 +199,7 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a class="btn btn-primary card-btn">Go somewhere</a>
+              <a class="btn btn-primary" id="card-btn4">Go somewhere</a>
             </div>
           </div>
           <!-- <div class="testi_item">
@@ -216,18 +219,53 @@
         </div>
       </div>
     </div>
-    <div class="modal hidden">
+    <div class="dialog di1 hidden">
       <iframe
-        width="560"
-        height="315"
         src="https://www.youtube.com/embed/k7LhdJPUTQ0?si=XEgK3JZjPWkCZPaZ&amp;controls=0"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
+        class="test-vid"
       ></iframe>
     </div>
-    <div class="overlay"></div>
+    <div class="dialog di2 hidden">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/6BqpU4V0Ypk?si=JOGl7_F4vFovxvxg"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="test-vid"
+      ></iframe>
+    </div>
+    <div class="dialog di3 hidden">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/3ZJgMfE1wlE?si=LxJ4740R8xAtVWEA"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="test-vid"
+      ></iframe>
+    </div>
+    <div class="dialog di4 hidden">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/w3EYKuFGJ5c?si=1QBSxN8nsgTuUAei"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="test-vid"
+      ></iframe>
+    </div>
+    <div class="overlay hidden"></div>
   </div>
 </div>
 
@@ -246,7 +284,9 @@
       <div class="container">
         <div class="card-carousel">
           <div class="card" id="1">
-            <div class="image-container"></div>
+            <div class="image-container">
+              <img src="{% static '/img/clients/2.png'%}" alt="" />
+            </div>
             <!-- <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p> -->
           </div>
           <div class="card" id="2">
@@ -288,16 +328,16 @@
               <img src="{% static '/img/brands/stepup.png'%}" />
             </div>
             <div class="slide">
-              <img src="{% static '/img/brands/stepup.png'%}" />
+              <img src="{% static '/img/brands/1.png'%}" />
             </div>
             <div class="slide">
-              <img src="{% static '/img/brands/stepup.png'%}" />
+              <img src="{% static '/img/brands/2.png'%}" />
             </div>
             <div class="slide">
-              <img src="{% static '/img/brands/stepup.png'%}" />
+              <img src="{% static '/img/brands/3.png'%}" />
             </div>
             <div class="slide">
-              <img src="{% static '/img/brands/stepup.png'%}" />
+              <img src="{% static '/img/brands/5.png'%}" />
             </div>
             <div class="slide">
               <img src="{% static '/img/brands/stepup.png'%}" />
