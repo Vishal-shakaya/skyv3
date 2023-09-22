@@ -1294,9 +1294,21 @@ border-radius: 10px;
 #sec-5-con{
   position: relative;
 }
-.modal{
+.dialog{
   position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
+
+.test-vid{
+  height: 60vh;
+  width: 60vw;
+}
+
 .overlay{
   position: absolute;
   top:0;

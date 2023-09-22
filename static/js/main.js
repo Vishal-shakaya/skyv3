@@ -28,5 +28,3 @@ document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
   document.querySelector('.subscription').classList.add('done');
 });
 
-const cardBtn=document.querySelector(".card-btn");
-const overlay=document.querySelector(".overlay");
