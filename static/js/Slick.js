@@ -7,7 +7,7 @@ $(document).ready(function(){
     slidesToShow: 3,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 100000,
     centerMode: true,
     variableWidth: true,
     responsive: [

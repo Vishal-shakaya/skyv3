@@ -102,11 +102,16 @@ def SignupHandler(request):
             data = json.loads(request.body)
             username = data['username']
             password = data['password']
+            print(username,password)
             user_exist = UserObj.objects.filter(
                 username=username,)
 
+            if not user_exist :
+                print("user is not existing")
+                
             # If user already exist
-            if user_exist is not None:
+            if (user_exist):
+                print(f'user exist ${user_exist}')
                 return ResponseBack(message='username already exist', data='', response='fail')
 
             my_user = UserObj.objects.create_user(

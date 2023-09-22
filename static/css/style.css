@@ -533,7 +533,7 @@ background-color: black;
 .founder-head-text{
     margin-top: 1rem;
     font-family:'Roboto Slab';
-    font-size: 3rem;
+    font-size: 2.7rem;
     color:white ;
     font-weight: bold;
 }
@@ -1285,4 +1285,24 @@ border-radius: 10px;
 .logout-btn:hover{
   border:1px solid red;
   color:red;
+}
+
+
+.hidden{
+  display: none;
+}
+#sec-5-con{
+  position: relative;
+}
+.modal{
+  position: absolute;
+}
+.overlay{
+  position: absolute;
+  top:0;
+  left: 0;
+  height:100vh;
+  width: 100vw;
+  background-color: rgba(19, 19, 23, 0.375);
+  
 }

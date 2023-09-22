@@ -123,7 +123,7 @@
 
 <!-- Section 4 Testimonial  -->
 <div id="sec-5">
-  <div class="container-fluid">
+  <div class="container-fluid" id-="sec-5-con" style="position: relative">
     <div class="container">
       <div class="row justify-content-center">
         <p class="sec-5-head-text">Testimonial</p>
@@ -135,37 +135,99 @@
     <div class="row justify-content-center">
       <div class="container">
         <div class="my_slick">
-          <div class="testi_item">
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/clients/1.png'%}"
+              id="card-img1"
+              alt="..."
+              style="margin-top: 0"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a class="btn btn-primary card-btn">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/clients/2.png'%}"
+              id="card-img2"
+              alt="..."
+              style="margin-top: 0"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a class="btn btn-primary card-btn">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/ceo-profile.png'%}"
+              id="card-img3"
+              alt="..."
+              style="margin-top: 0"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a class="btn btn-primary card-btn">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/clients/3.png'%}"
+              id="card-img1"
+              alt="..."
+              style="margin-top: 0"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a class="btn btn-primary card-btn">Go somewhere</a>
+            </div>
+          </div>
+          <!-- <div class="testi_item">
             <img
               class="test_img"
               src="{% static '/img/clients/1.png'%}"
               alt="img1"
             />
-          </div>
-          <div class="testi_item">
-            <img
-              class="test_img"
-              src="{% static '/img/clients/2.png'%}"
-              alt="img2"
-            />
-          </div>
-          <div class="testi_item">
-            <img
-              class="test_img"
-              src="{% static '/img/clients/3.png'%}"
-              alt="img3"
-            />
-          </div>
-          <div class="testi_item">
+          </div> -->
+          <!-- <div class="testi_item">
             <img
               class="test_img"
               src="{% static '/img/ceo-profile.png'%}"
               alt="img4"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
+    <div class="modal hidden">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/k7LhdJPUTQ0?si=XEgK3JZjPWkCZPaZ&amp;controls=0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="overlay"></div>
   </div>
 </div>
 
@@ -276,14 +338,12 @@
         />
       </div>
       <div class="col-6">
-        <p class="founder-head-text">What we do</p>
+        <p class="founder-head-text">Asli Dhanda Newsletter</p>
         <p class="founder-head-subtext">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-          molestias architecto voluptate
+          Are you a startup or a new business wondering how some businesses grow
+          100X or 200X? Look no further! Asli Dhanda Newsletter provides you
+          with on-ground real business insights and tips from experts in various
+          industries that will take your business to the next level.
         </p>
 
         <div class="row">
@@ -384,9 +444,9 @@
         <span class="bottom-brand-second-text">TECHNO</span>
 
         <p class="bottom-sky-desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum
+          We're passionate about helping our clients succeed, and we go the
+          extra mile to deliver results. We're also creative and innovative, and
+          we're always looking for new ways to help our clients grow.
         </p>
       </div>
 
