@@ -1,0 +1,93 @@
+{% extends 'base.html'%} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/partnerus.css' %}" />
+{% endblock style %} {% block content %}
+
+<div class="container-xl mt-5">
+  <div class="row row-12 d-flex justify-content-center mb-5">
+    <h1 class="main-heading">Partner with us</h1>
+  </div>
+  <div class="row main-content">
+    <div class="col col-md-6 card">
+      <input
+        class="url-value"
+        type="hidden"
+        value="{% url 'create_partner' %}"
+      />
+      <form class="form row g-3" method="post">
+        <div class="col col-12 form-col">
+          <label for="name" class="form-label"> Name </label>
+          <input
+            type="text"
+            name="name"
+            class="form-control input-1"
+            required
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="phone" class="form-label">Phone no.</label>
+          <!-- <input type="number" name="phone no." class="form-control input-2" /> -->
+          <input
+            class="form-control input-2"
+            id="phone"
+            type="tel"
+            name="phone"
+            required
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control input-3"
+            required
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Field" class="form-label">Categories</label>
+          <select class="select input-4" required>
+            <option selected>Select an option</option>
+            <option value="Digital marketing">Marketing</option>
+            <option value="Custom software development">
+              Software development
+            </option>
+            <option value="Saas">Saas</option>
+          </select>
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Business-website" class="form-label">Your website</label>
+          <input type="url" name="website" class="form-control input-5" />
+        </div>
+        <div class="col col-12">
+          <button
+            type="submit"
+            class="btn btn-dark"
+            onclick="SubmitParnerFome()"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <div class="alert alert-info" style="display: none"></div>
+      <div class="alert alert-error" style="display: none"></div>
+      S
+    </div>
+    <div class="col col-md-6 d-flex align-items-center">
+      <img
+        src="{% static  'img/growth(1).gif' %}"
+        alt="Partner with us image"
+        style="width: 40rem"
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  const phoneInput = window.intlTelInput(document.querySelector("#phone"), {
+    preferredCountries: ["in", "us", "co", "de"],
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>
+<script src="{% static 'js/Partner.js' %}"></script>
+{% endblock content %}

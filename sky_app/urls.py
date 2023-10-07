@@ -26,6 +26,8 @@ urlpatterns = [
     path('create-card-handler/', views.CreateCardHandler,
          name='create_card_handler'),
     path('survey-view/', views.SurveyView, name='survey_view'),
+    path('partner-view/', views.PartnerView, name='partner_view'),
+    path('create-partner/',views.CreatePartner,name='create_partner')
 
 
 

@@ -146,12 +146,14 @@
               style="margin-top: 0"
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Hightechwindowblinds</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                <blockquote>
+                "Exceptional agency boosted our online presence, generating 50%
+                more leads and doubling social media engagement. Outstanding digital marketing agency for blinds manufacturer"
+              </blockquote>
               </p>
-              <a class="btn btn-primary" id="card-btn1">Go somewhere</a>
+              <a class="btn btn-dark" onclick="client1()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
             </div>
           </div>
           <div class="card mt-5" style="width: 21rem">
@@ -162,28 +164,43 @@
               style="margin-top: 0"
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Naildit studio</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                <blockquote>
+                  "From day one, Skytechno understood our niche. Their tailored approach increased our leads by 70-80%. Thanks to Skytechno, our outlet footfall tripled. A perfect partner for nail art success!"
+                </blockquote>
               </p>
-              <a class="btn btn-primary" id="card-btn2">Go somewhere</a>
+              <a class="btn btn-dark" onclick="client2()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
             </div>
           </div>
           <div class="card mt-5" style="width: 21rem">
             <img
-              src="{% static '/img/ceo-profile.png'%}"
+              src="{% static '/img/clients/whtahome.png'%}"
               id="card-img3"
+              alt="..."
+              style="margin-top: 0;"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Wht A Home</h5>
+              <p class="card-text">
+                <blockquote>"Skytechno delivered a 32% boost in marketplace orders through their expertly executed Ads campaigns. Our social engagement now doubles weekly, their work is exceptional ."</blockquote>
+              </p>
+              <a class="btn btn-dark" onclick="client3()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
+            </div>
+          </div>
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/clients/AR Furnishing.png'%}"
+              id="card-img1"
               alt="..."
               style="margin-top: 0"
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">AR Furnishing</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                <blockquote>"Their responsiveness in making creative changes is impressive. Their expertise shines through in achieving excellent results for our Google Business page and SEO optimisation"</blockquote>
               </p>
-              <a class="btn btn-primary" id="card-btn3">Go somewhere</a>
+              <a class="btn btn-dark" onclick="client4()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
             </div>
           </div>
           <div class="card mt-5" style="width: 21rem">
@@ -194,14 +211,44 @@
               style="margin-top: 0"
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Perfekte kuchen</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                <blockquote>"Skytechno elevated our modular kitchen business social engagement soared, leads doubled and Google Business Profile delivered valuable clients. A worthy partnership!"</blockquote>
               </p>
-              <a class="btn btn-primary" id="card-btn4">Go somewhere</a>
+              <a class="btn btn-dark" onclick="client4()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
             </div>
           </div>
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/clients/autozone.png'%}"
+              id="card-img1"
+              alt="..."
+              style="margin-top: 0"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Autozone gurgaon</h5>
+              <p class="card-text">
+                <blockquote>"Skytechno's Ads campaign is a game-changer, generating 18-20 monthly leads, boosting footfall traffic, and attracting orders from diverse locations. Their skills are truly exceptional."</blockquote>
+              </p>
+              <a class="btn btn-dark" onclick="client4()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
+            </div>
+          </div>
+          <div class="card mt-5" style="width: 21rem">
+            <img
+              src="{% static '/img/clients/stepupp.png'%}"
+              id="card-img1"
+              alt="..."
+              style="margin-top: 0"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Stepupp baby products</h5>
+              <p class="card-text">
+                <blockquote>"Skytechno's digital expertise drove substantial online sales growth. Their swift creative response and adept Google Business and SEO work make them indispensable partners."</blockquote>
+              </p>
+              <a class="btn btn-dark" onclick="client4()"><img class="img-fluid mt-0 voice-img" style="height:2.5rem; width:6.5rem" src="{% static '/img/voice-icon.png'%}" alt=""></a>
+            </div>
+          </div>
+
           <!-- <div class="testi_item">
             <img
               class="test_img"
@@ -325,7 +372,7 @@
         <div class="container">
           <section class="customer-logos slider">
             <div class="slide">
-              <img src="{% static '/img/brands/stepup.png'%}" />
+              <img src="{% static '/img/brands/stepupp.png'%}" />
             </div>
             <div class="slide">
               <img src="{% static '/img/brands/c1.png'%}" />
@@ -341,6 +388,15 @@
             </div>
             <div class="slide">
               <img src="{% static '/img/brands/c5.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/c6.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/whtahome.png'%}" />
+            </div>
+            <div class="slide">
+              <img src="{% static '/img/brands/divin.png'%}" />
             </div>
           </section>
         </div>

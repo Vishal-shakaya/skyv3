@@ -126,7 +126,7 @@ class SureveyQuest(models.Model):
     no_8 = models.BooleanField(default=False)
 
     quest_head_9 = models.CharField(
-        default='Does the business have Text-2-Pay?',
+        default='Does the business have Tap-2-Pay?',
         max_length=255, null=True, blank=True)
     yes_9 = models.BooleanField(default=False,)
     no_9 = models.BooleanField(default=False)
@@ -175,3 +175,13 @@ class SureveyQuest(models.Model):
 
     def __str__(self):
         return f'{self.quest_head_1} {self.pk}'
+
+class PartnerUs(models.Model):
+    name=models.CharField(null=True, blank=True, max_length=50)
+    phone=models.CharField(max_length=15)
+    email=models.EmailField()
+    category=models.CharField(max_length=40)
+    website=models.URLField()
+    
+    def __str__(self):
+        return self.name

@@ -1,4 +1,4 @@
-const cardBtn1 = document.querySelector("#card-btn1");
+const cardBtn1 = document.querySelector(".clientBtn1");
 const cardBtn2 = document.querySelector("#card-btn2");
 const cardBtn3 = document.querySelector("#card-btn3");
 const cardBtn4 = document.querySelector("#card-btn4");
@@ -9,21 +9,22 @@ const modal4 = document.querySelector(".di4");
 const overlay = document.querySelector(".overlay");
 
 
-cardBtn1.addEventListener('click', () => {
+
+function client1(){
     openModal(modal1, overlay);
-});
+}
 
-cardBtn2.addEventListener('click', () => {
+function client2(){
     openModal(modal2, overlay);
-});
+}
 
-cardBtn3.addEventListener('click', () => {
+function client3(){
     openModal(modal3, overlay);
-});
+}
 
-cardBtn4.addEventListener('click', () => {
+function client4(){
     openModal(modal4, overlay);
-});
+}
 
 overlay.addEventListener('click', () => {
     closeModal(modal1, overlay);

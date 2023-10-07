@@ -10,6 +10,7 @@ from .utils import ResponseBack, ValidateCardData, UpdateCard, CreateCard, surve
 from .models import SkyCard, Blog
 from .forms import CreateCardForm, SurveyForm
 from django.db.models import Q
+from .models import PartnerUs
 # Create your views here.
 
 
@@ -238,3 +239,19 @@ def SurveyView(request):
         request,
         template_name='SurveyView.html',
         context={"fields": surveyFields})
+
+def PartnerView(request):
+    return render(request, template_name='PartnerWithUs.html')
+
+@csrf_exempt
+def CreatePartner(request):
+    data = request.POST; 
+    print(data['name']);
+    if request.method=='POST':
+        try:
+            # data=PartnerUs(name=name,phone=phone,email=email,category=category,website=website)
+            # data.save()
+       
+            return ResponseBack(message='Partner Registered', data='', response='success')
+        except print(0):
+            return ResponseBack(message='Unable To Register Partner', data='', response='fail')
