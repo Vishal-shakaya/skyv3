@@ -176,12 +176,13 @@ class SureveyQuest(models.Model):
     def __str__(self):
         return f'{self.quest_head_1} {self.pk}'
 
+
 class PartnerUs(models.Model):
-    name=models.CharField(null=True, blank=True, max_length=50)
-    phone=models.CharField(max_length=15)
-    email=models.EmailField()
-    category=models.CharField(max_length=40)
-    website=models.URLField()
-    
+    name = models.CharField(null=True, blank=True, max_length=50)
+    phone = models.CharField(max_length=15, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    category = models.CharField(max_length=100, null=True, blank=True)
+    website = models.URLField()
+
     def __str__(self):
         return self.name

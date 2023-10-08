@@ -103,13 +103,13 @@ def SignupHandler(request):
             data = json.loads(request.body)
             username = data['username']
             password = data['password']
-            print(username,password)
+            print(username, password)
             user_exist = UserObj.objects.filter(
                 username=username,)
 
-            if not user_exist :
+            if not user_exist:
                 print("user is not existing")
-                
+
             # If user already exist
             if (user_exist):
                 print(f'user exist ${user_exist}')
@@ -240,18 +240,37 @@ def SurveyView(request):
         template_name='SurveyView.html',
         context={"fields": surveyFields})
 
+
 def PartnerView(request):
     return render(request, template_name='PartnerWithUs.html')
 
+
 @csrf_exempt
 def CreatePartner(request):
-    data = request.POST; 
-    print(data['name']);
-    if request.method=='POST':
+    data = request.body
+    jsonData = json.loads(data)
+    name = jsonData['name']
+    email = jsonData['email']
+    phone = jsonData['phone']
+    catigory = jsonData['catigory']
+    website = jsonData['website']
+
+    print(name)
+    print(email)
+    print(phone)
+    print(catigory)
+    print(website)
+
+    if request.method == 'POST':
         try:
-            # data=PartnerUs(name=name,phone=phone,email=email,category=category,website=website)
-            # data.save()
-       
+            partnerIns = PartnerUs(
+                name=name,
+                email=email,
+                phone=phone,
+                category=catigory,
+                website=website,
+            )
+            partnerIns.save()
             return ResponseBack(message='Partner Registered', data='', response='success')
         except print(0):
             return ResponseBack(message='Unable To Register Partner', data='', response='fail')
