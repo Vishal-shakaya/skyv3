@@ -4,12 +4,22 @@
       <div class="row">
         <div class="col-6">
           <label for="Yes">Yes</label>
-          <input type="checkbox" placeholder="Yes" name="{{field_name1}}" />
+          <input
+            type="checkbox"
+            placeholder="Yes"
+            name="{{field_name1}}"
+            id="yes-{{ forloop.counter }}"
+          />
         </div>
 
         <div class="col-6">
           <label for="No">No</label>
-          <input type="checkbox" placeholder="No" name="{{field_name2}}" />
+          <input
+            type="checkbox"
+            placeholder="No"
+            name="{{field_name2}}"
+            id="no-{{ forloop.counter }}"
+          />
         </div>
       </div>
     </div>

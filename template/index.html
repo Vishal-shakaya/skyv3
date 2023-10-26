@@ -47,10 +47,10 @@
 
     <!-- Create Button  -->
     <div class="row justify-content-center">
-      <!-- <a href="{% url 'auth' %}">
+      <a href="{% url 'auth' %}">
         <button class="create-card-btn">Create Now</button>
-      </a> -->
-      <h2>Coming soon...</h2>
+      </a>
+      <!-- <h2>Coming soon...</h2> -->
     </div>
 
     <div class="container-fluid">
@@ -445,13 +445,14 @@
         <div class="row">
           <div class="sub-container">
             <div class="content">
-              <form class="subscription">
+              <div class="subscription">
+                <input type="hidden" class="newsletter-url" value="{% url 'newsletter_subs' %}">
                 <input
                   class="add-email"
                   type="email"
                   placeholder="subscribe@news.now"
                 />
-                <button class="submit-email" type="button">
+                <button class="submit-email" type="button" onclick="newsEmailRegister()">
                   <span class="before-submit">Subscribe</span>
                   <span class="after-submit">Thank you for subscribing!</span>
                 </button>
@@ -464,7 +465,7 @@
         <div class="center">
           <div id="social-test">
             <ul class="social">
-              <li>
+              <li class="social-links">
                 <a
                   href="https://www.facebook.com/skytechno.org/"
                   target="_blank"
@@ -477,7 +478,7 @@
                 </a>
               </li>
 
-              <li>
+              <li class="social-links">
                 <a
                   href="https://www.instagram.com/skytechno1100/"
                   class="first-social-link"
@@ -490,7 +491,7 @@
                 </a>
               </li>
 
-              <li>
+              <li class="social-links">
                 <a
                   href="https://twitter.com/skytechno_org"
                   class="first-social-link"
@@ -499,7 +500,7 @@
                   <i class="fa-brands fa-twitter fa-sm" aria-hidden="true"></i>
                 </a>
               </li>
-              <li>
+              <li class="social-links">
                 <a
                   href="https://www.linkedin.com/company/skytechno00/?viewAsMember=true"
                   target="_blank"
@@ -508,7 +509,7 @@
                   <i class="fa-brands fa-linkedin fa-sm" aria-hidden="true"></i>
                 </a>
               </li>
-              <li>
+              <li class="social-links">
                 <a
                   href="https://www.youtube.com/channel/UCRvdXrgw-yt4WvuGjBy9yDw"
                   target="_blank"

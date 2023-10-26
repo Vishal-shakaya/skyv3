@@ -1,9 +1,6 @@
-
-
-// const submitBtn = document.querySelector(".submit");
 const info = document.querySelector(".alert-info");
 const error = document.querySelector(".alert-error");
-
+let phone=document.querySelector(".input-2").placeholder='XXXXXXXXXX';
 
 function SubmitParnerFome(){
     info.style.display = "none";
@@ -69,3 +66,4 @@ function SubmitParnerFome(){
 };
 
 console.log('parner page working')
+

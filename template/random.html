@@ -1,0 +1,529 @@
+{% extends 'base.html' %} {% load static %} 
+
+
+{% block extend_nav %}
+  <a class="nav-link logout-btn " onclick="LogoutUser();" >Logout</a>
+{% endblock extend_nav %}
+  
+{% block content %}
+
+<input type="hidden" id="create_card_handler" value="{% url 'create_card_handler' %}">
+<input type="hidden" id="logout_user_url" value="{% url 'logout_user' %}">
+<input type="hidden" id="auth_url" value="{% url 'auth' %}">
+<input type="hidden" value="{{csrf_token}}" name="csrfmiddlewaretoken">
+
+
+<!-- SKY CARD SECTION  -->
+<div id="sec-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <p class="skycard-sec-head-text">SKY CARD IS FIRST PRIORITY</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <p class="skycard-sec-subhead-text">Indias First Digital Card</p>
+    </div>
+
+    <!-- Create Button  -->
+    <!-- <div class="row justify-content-center">
+        <button class="create-card-btn">Create Now</button>
+      </div> -->
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <img
+          src="{% static '/img/cover1.gif' %}"
+          alt="cover"
+          class="skycard-cover"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row"></div>
+  <div class="row">
+    <div class="col col-md-6">
+      <div class="owner-info card">
+        <div class="col col-12 form-col">
+          <label for="name" class="form-label"> Name </label>
+          <input
+            name="name"
+            id="user_name"
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            required
+            value="{{skyObj.name}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Position </label>
+          <input
+            name="position"
+            id="user_position"
+            type="text"
+            class="form-control "
+            placeholder="Position"
+            required
+            value="{{skyObj.position}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Personal Phone No. </label>
+          <input
+            name="number"
+            id="user_number"
+            type="text"
+            class="form-control "
+            placeholder="Personal Phone No."
+            required
+            value="{{skyObj.number}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Email </label>
+          <input
+            name="Email"
+            id="user_email"
+            type="text"
+            class="form-control "
+            placeholder="Email"
+            required
+            value="{{skyObj.email}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <button class="next-btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-6">
+      <img
+        src="{% static  'img/growth(1).gif' %}"
+        alt="Partner with us image"
+        style="width: 40rem"
+      />
+    </div>
+  </div>
+</div>
+<div class="container-xl" id="sec-11">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <!-- User info -->
+        <div class="col-6">
+          <form  id="create_card_form">
+           
+            <img id="output" class="my-logo" alt=" " src="{{skyObj.profile_image.url}}"/>
+    
+            <input
+              name="profile_image"
+              type="file"
+              accept="image/*"
+              class=" "
+              onchange="LoadProfile(event)"
+              id="profile_image"
+              required
+            />
+            <input
+              name="name"
+              id="user_name"
+              type="text"
+              class="my-input-field"
+              placeholder="Name"
+              required
+              value="{{skyObj.name}}"
+            />
+            <input
+              name="position"
+              id="user_position"
+              type="text"
+              class="my-input-field"
+              placeholder="Position"
+              required
+              value="{{skyObj.position}}"
+              />
+              <input
+              name="number"
+              type="text"
+              class="my-input-field"
+              placeholder="Number"
+              id="user_number"
+              required
+              value="{{skyObj.number}}"
+              />
+              <input
+              name="whats_app_number"
+              type="text"
+              class="my-input-field"
+              placeholder="Whatsapp no"
+              id="whatspp_number"
+              required
+              value="{{skyObj.whats_app_number}}"
+              />
+              <input
+              name="email"
+              type="text"
+              id="user_email"
+              class="my-input-field"
+              placeholder="Email"
+              required
+              value="{{skyObj.email}}"
+              />
+              <input
+              name="insta"
+              type="text"
+              id="insta_link"
+              class="my-input-field"
+              placeholder="Insta Link"
+              required
+              value="{{skyObj.insta}}"
+              />
+              <input
+              name="twitter"
+              type="text"
+              id="twitter_link"
+              class="my-input-field"
+              placeholder="Twitter Link"
+              required
+              value="{{skyObj.facebook}}"
+              />
+              <input
+              name="facebook"
+              type="text"
+              id="face_link"
+              class="my-input-field"
+              placeholder="Facebook Link"
+              required
+              value="{{skyObj.twitter}}"
+              />
+              <input
+              name="youtube"
+              type="text"
+              id="youtube_link"
+              class="my-input-field"
+              placeholder="Youtube Link"
+              required
+              value="{{skyObj.youtube}}"
+            />
+            <!-- <input
+                type="text"
+                id="user_email"
+                class="my-input-field"
+                placeholder="O"
+              /> -->
+          
+        </div>
+
+        <!-- Busiess Inof -->
+        <div class="col-6">
+          <img id="output-1" class="my-logo" alt=" " src="{{skyObj.business_logo.url}}" />
+          <!---->
+          <input 
+          type="file" 
+          accept="image/*" 
+          class=" " 
+          name="business_logo"  onchange="LoadLogo(event)" 
+          id="business_logo"
+          required
+          />
+          <input
+          name="business_heading"
+          type="text"
+          class="my-input-field"
+          placeholder="Business Heading"
+          id="business_heading"
+          value="{{skyObj.business_heading}}"
+          required
+          />
+          <input
+          name="business_name"
+          type="text"
+          class="my-input-field"
+          placeholder="Business Name"
+          id="business_name"
+          required
+          value="{{skyObj.business_name}}"
+          />
+          <input
+          name="tagline"
+          type="text"
+          class="my-input-field"
+          placeholder="Tag Line"
+          id="tag_line"
+          required
+          value="{{skyObj.tagline}}"
+          />
+          <input
+          name="gst_number"
+          type="text"
+          class="my-input-field"
+          placeholder="GST Number"
+          id="gst_number"
+          required
+          value="{{skyObj.gst_number}}"
+          />
+          <input
+          name="stablish_year"
+          type="text"
+          class="my-input-field"
+          placeholder="Year of Stablish"
+          id="stablish_year"
+          required
+          value="{{skyObj.stablish_year}}"
+          />
+          <input
+          name="website"
+          type="text"
+          class="my-input-field"
+          placeholder="Website Url"
+          id="web_url"
+          required
+          value="{{skyObj.website}}"
+          />
+       
+          <div class="hr-width"></div>
+          <label for="pet-select">Business Tag </label>
+          
+          <select id="business_tag" name="pet-select" required>
+            <option value="{{skyObj.tag}}">&#160; Choose an option</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="goldfish">Goldfish</option>
+          </select>
+          
+          <textarea
+          name="business_description"
+          rows="5"
+          cols="5"
+          class="bus-desc"
+            id="business_desc"
+            placeholder="Business description"
+            required
+            
+            >{{skyObj.business_description}}</textarea>
+          </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-3">
+          <input
+          name="state"
+          type="text"
+          class="my-input-field-addr"
+          placeholder="State"
+          id="loc_state"
+          required
+          value="{{skyObj.state}}"
+          />
+        </div>
+        <div class="col-3">
+          <input
+          name="city"
+          type="text"
+          class="my-input-field-addr"
+          placeholder="City"
+          id="loc_city"
+          required
+          value="{{skyObj.city}}"
+          />
+        </div>
+        <div class="col-3">
+          <input
+          name="country"
+          type="text"
+          class="my-input-field-addr"
+          placeholder="Country"
+          id="loc_country"
+          required
+          value="{{skyObj.country}}"
+          />
+        </div>
+        <div class="col-3">
+          <input
+          name="pincode"
+          type="text"
+          class="my-input-field-addr"
+          placeholder="Pincode"
+          id="loc_pincode"
+          required
+          value="{{skyObj.pincode}}"
+          />
+        </div>
+        </div>
+        
+        <!-- address -->
+        <div class="row">
+          <textarea
+          name="address"
+          placeholder="Complete Address"
+          rows="5"
+          cols="5"
+          class="address-area"
+          id="loc_address"
+          required
+          
+        >{{skyObj.address}}</textarea>
+      </div>
+    </form>
+      <div class="row justify-content-center">
+        <button 
+         type="submit"
+         class="submit-button"
+         form="create_card_form"
+         onclick="GetFormsData()">Submit</button>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="col-4">      
+      {% if is_update %}
+      <div class="row">
+         <div class="col-2"></div>
+         <div class="col-3">
+          <a href="{% url 'card_detail' pk=skyObj.pk %}">
+            <button id="search_btn">View</button>
+          </a>
+        </div>
+         <div class="col-2"></div>
+         <div class="col-3"> 
+          <a href="{% url 'card_list' %}">
+            <button id="view_card_btn">Search</button>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+        
+
+      <div class="flip-container centered">
+        <div class="flipper">
+          <div class="front">
+            <div class="container">
+              <div class="row justify-content-center">
+                <img
+                  src="{% static '/img/icon.png' %}"
+                  alt="logo"
+                  class="my-card-logo"
+                  id="card_logo"
+                />
+              </div>
+              <div class="row justify-content-center">
+                <span class="card-front-text" id="card_position"
+                  >S.R Engineer</span
+                >
+              </div>
+              <div class="row justify-content-center">
+                <span class="card-front-text" id="card_username">
+                  MR Vishal shakya</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="row">
+              <!-- qr ana tag -->
+              <div class="col-4">
+                <div class="row justify-content-center">
+                  <img
+                    src="{% static '/img/qr.jpg' %}"
+                    alt="qrcode"
+                    class="card-qr"
+                  />
+                </div>
+                <div class="row justify-content-center">
+                   <span class="start-sky-text" id="card_business_name" >{{skyObj.business_name}} </span>
+                  <!-- <span class="end-sky-text"> </span> -->
+                </div>
+
+                <div class="row">
+                  <span class="card-tag-line" id="bus_tag_line"  >
+                    <!--  -->
+                    {{skyObj.tagline}}
+                  </span>
+                </div>
+
+                <div class="row justify-content-center">
+                  <a href="" class="card-social-icon">
+                    <i
+                      class="fa-brands fa-instagram fa-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+
+                  <a href=" " class="card-social-icon">
+                    <i
+                      class="fa-brands fa-twitter fa-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+
+                  <a href="" class="card-social-icon">
+                    <i
+                      class="fa-brands fa-linkedin fa-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+
+                  <a href=" " class="card-social-icon">
+                    <i
+                      class="fa-brands fa-youtube fa-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="col-1"></div>
+              <div class="col-6">
+                <div class="row justify-content-center">
+                  <span class="card-bus-name" id="business_headling_tag" >
+                   {{skyObj.business_heading}}
+                  </span>
+                </div>
+                <br />
+                <div class="row justify-content-left">
+                  <i class="" id="card-icon">GST</i>
+                  <b class="my-card-infod" id="card_basic_number">7065121120</b>
+                </div>
+                <div class="row justify-content-left">
+                  <i class="fa-brands fa-whatsapp" id="card-icon"></i>
+                  <b class="my-card-infod" id="card_whatspp_number"
+                    >7011294134</b
+                  >
+                </div>
+
+                <div class="row justify-content-left">
+                  <i class="fa-solid fa-globe" id="card-icon"></i>
+                  <b class="my-card-infod" id="card_weburl"
+                    >www.skytechno.org</b
+                  >
+                </div>
+                <div class="row justify-content-left">
+                  <i class="fa-regular fa-envelope" id="card-icon"></i>
+                  <b class="my-card-infod" id="card_user_email"
+                    >vishal@skytechno.org</b
+                  >
+                </div>
+                <div class="row justify-content-left">
+                  <i class="fa-solid fa-location-pin" id="card-icon"></i>
+                  <b class="my-card-infod" id="card_address"
+                    >Dwarka mor Gain Road</b
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+{% endblock content %}

@@ -24,7 +24,7 @@ label{
     width: 50%;
     padding: 4rem;
 }
-.submit{
+.submit-btn{
     margin-top: 2rem;
     display: block;
     width: 100%;
@@ -66,4 +66,7 @@ label{
         align-items: center !important;
         padding: 5px 10px;
         outline: none; 
+}
+.input-2::placeholder{
+    color: #ffffff;
 }

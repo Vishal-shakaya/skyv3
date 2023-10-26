@@ -35,27 +35,46 @@
   </div>
 
   <!-- Survey section 1  -->
-  <form action="{% url 'survey_view' %}" method="POST">
-    {% csrf_token %}
+  <div>
+    <!-- {% csrf_token %} -->
   <div class="container">
-    <input type="text" placeholder="Your Email" name="email"  required  class="suv_email"/>
-    <hr />
-
+    <input type="text" placeholder="Your Email" name="email"  required  class="suv_email" id="suv_email"/>
+    <hr /> 
+    <input
+        class="url-value"
+        type="hidden"
+        value="{% url 'survey_form' %}"
+      />
     {% for field in fields %} 
-    <div>
+    <div> 
     {% include 'SurveyQuest.html' with title=field.title subtitle=field.subtitle field_name1=field.field_name1 field_name2=field.field_name2 %}
-      
+    
     </div>
     {% endfor %}
     <div class="row justify-content-center">
-      <input type="submit" name="submit" value="submit"  class="suv_submit_btn">
+      <input id="open_dialog" type="submit" name="submit" value="submit"  class="suv_submit_btn" onclick="surveySubmit()">
+      <dialog aria-labelledby="dialog_title" aria-describedby="dialog_description">
+        <img src="{% static  'img/green_tick.png' %}"  alt="Illustration of Location Services" />
+        <h2 id="dialog_title" class="h2">Review our profile, and get:</h2>
+        <p id="dialog_description">
+          <ul>
+            <li class="dialog-li">Our secret funnel 🚀 that generates  1000+ leads</li>
+            <li class="dialog-li">Premium strategies tailored to your business 📈</li>
+          </ul>
+          for free to supercharge 😎 your business growth by 10x! 🌟
+        </p>
+        <div class="flex flex-space-between">
+          <button id="close_dialog">Close</button>
+          <button id="confirm_dialog" class="cta" onclick="openReviewPage()">Confirm</button>
+        </div>
+      </dialog>
       <div/>
   </form>
   </div>
 </div>
 
 
-<script src="{% static 'Survey.js' %}"></script>
+<!-- <script src="{% static 'Survey.js' %}"></script> -->
 {% endblock content %}
 
 

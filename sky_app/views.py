@@ -10,7 +10,7 @@ from .utils import ResponseBack, ValidateCardData, UpdateCard, CreateCard, surve
 from .models import SkyCard, Blog
 from .forms import CreateCardForm, SurveyForm
 from django.db.models import Q
-from .models import PartnerUs
+from .models import PartnerUs, SureveyQuest, NewsletterSubscription, QueryForm
 # Create your views here.
 
 
@@ -232,13 +232,130 @@ def BlogDetailView(request, pk):
 
 
 def SurveyView(request):
-    if request.POST:
-        form = SurveyForm(request.POST)
-        form.save()
     return render(
         request,
         template_name='SurveyView.html',
         context={"fields": surveyFields})
+
+@csrf_exempt
+def SurveyForm(request):
+    data=request.body
+    jsonData=json.loads(data)
+    print(jsonData)
+    
+    email=jsonData['email']
+    yes_1=jsonData['yes_1']
+    no_1=jsonData['no_1']
+    
+    yes_2=jsonData['yes_2']
+    no_2=jsonData['no_2']
+    
+    yes_3=jsonData['yes_3']
+    no_3=jsonData['no_3']
+    
+    yes_4=jsonData['yes_4']
+    no_4=jsonData['no_4']
+    
+    yes_5=jsonData['yes_5']
+    no_5=jsonData['no_5']
+    
+    yes_6=jsonData['yes_6']
+    no_6=jsonData['no_6']
+    
+    yes_7=jsonData['yes_7']
+    no_7=jsonData['no_7']
+    
+    yes_8=jsonData['yes_8']
+    no_8=jsonData['no_8']
+    
+    yes_9=jsonData['yes_9']
+    no_9=jsonData['no_9']
+    
+    yes_10=jsonData['yes_10']
+    no_10=jsonData['no_10']
+    
+    yes_11=jsonData['yes_11']
+    no_11=jsonData['no_11']
+    
+    yes_12=jsonData['yes_12']
+    no_12=jsonData['no_12']
+    
+    yes_13=jsonData['yes_13']
+    no_13=jsonData['no_13']
+    
+    yes_14=jsonData['yes_14']
+    no_14=jsonData['no_14']
+    
+    yes_15=jsonData['yes_15']
+    no_15=jsonData['no_15']
+    
+    yes_16=jsonData['yes_16']
+    no_16=jsonData['no_16']
+    
+    print(type(yes_1))
+    print(no_2)
+    if request.method =='POST':
+        try:
+            surveyData=SureveyQuest(
+                email=email,
+                yes_1=yes_1,
+                no_1=no_1,
+                
+                yes_2=yes_2,
+                no_2=no_2,
+                
+                yes_3=yes_3,
+                no_3=no_3,
+                
+                yes_4=yes_4,
+                no_4=no_4,
+                
+                yes_5=yes_5,
+                no_5=no_5,
+                
+                yes_6=yes_6,
+                no_6=no_6,
+                
+                yes_7=yes_7,
+                no_7=no_7,
+                
+                yes_8=yes_8,
+                no_8=no_8,
+                
+                yes_9=yes_9,
+                no_9=no_9,
+                
+                yes_10=yes_10,
+                no_10=no_10,
+                
+                yes_11=yes_11,
+                no_11=no_12,
+                
+                yes_12=yes_12,
+                no_12=no_12,
+                
+                yes_13=yes_13,
+                no_13=no_13,
+                
+                yes_14=yes_14,
+                no_14=no_14,
+                
+                yes_15=yes_15,
+                no_15=no_15,
+                
+                yes_16=yes_16,
+                no_16=no_16,
+            )
+            surveyData.save()
+            return ResponseBack(message='Data submitted', data='', response='success')
+        except print(0):
+            return ResponseBack(message='Unable to submit data', data='', response='fail')
+
+    
+    
+    
+    
+
 
 
 def PartnerView(request):
@@ -274,3 +391,48 @@ def CreatePartner(request):
             return ResponseBack(message='Partner Registered', data='', response='success')
         except print(0):
             return ResponseBack(message='Unable To Register Partner', data='', response='fail')
+
+@csrf_exempt
+def NewsletterSubs(request):
+    data=request.body
+    jsonData=json.loads(data)
+    email=jsonData["email"]
+    
+    if request.method == 'POST':
+        try:
+            mailSub = NewsletterSubscription(
+                email=email,
+            )
+            mailSub.save()
+            return ResponseBack(message='Email registered', data='', response='success')
+        except print(0):
+            return ResponseBack(message='Unable To Register Email', data='', response='fail')
+    
+    
+    
+@csrf_exempt
+def QueryFormReg(request):
+    data=request.body
+    jsonData=json.loads(data)
+    print(jsonData)
+    
+    name=jsonData["name"]
+    phone=jsonData["phone"]
+    email=jsonData["email"]
+    services=json.dumps(jsonData["services"])
+    message=jsonData["message"]
+    
+    if request.method=="POST":
+        try:
+            queryRegister = QueryForm(
+                name=name,
+                phone=phone,
+                email=email,
+                services=services,
+                message=message
+            )
+            queryRegister.save()
+            return ResponseBack(message='Query registered', data='', response='success')
+        except print(0):
+            return ResponseBack(message='Unable To Register Query', data='', response='fail')
+    

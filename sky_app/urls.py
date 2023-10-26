@@ -26,8 +26,11 @@ urlpatterns = [
     path('create-card-handler/', views.CreateCardHandler,
          name='create_card_handler'),
     path('survey-view/', views.SurveyView, name='survey_view'),
+    path('survey-form/', views.SurveyForm, name='survey_form'),
     path('partner-view/', views.PartnerView, name='partner_view'),
-    path('create-partner/',views.CreatePartner,name='create_partner')
+    path('create-partner/',views.CreatePartner,name='create_partner'),
+    path('newsletter-subs/', views.NewsletterSubs, name='newsletter_subs'),
+    path('query-form-regis/', views.QueryFormReg, name='query_form_registeration')
 
 
 

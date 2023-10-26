@@ -41,6 +41,330 @@
   </div>
 </div>
 
+
+<div class="container">
+  <div class="row">
+  </div>
+  <!-- personal info -->
+  <div class="row ">
+    <div class="col col-md-6">
+      <div class="owner-info card-info card">
+        <div class="col col-12 form-col">
+          <label for="name" class="form-label"> Name </label>
+          <input
+            name="name"
+            id="user_name"
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            required
+            value="{{skyObj.name}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Position </label>
+          <input
+            name="position"
+            id="user_position"
+            type="text"
+            class="form-control "
+            placeholder="Position"
+            required
+            value="{{skyObj.position}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Personal Phone No. </label>
+          <input
+            name="number"
+            id="user_number"
+            type="text"
+            class="form-control "
+            placeholder="Personal Phone No."
+            required
+            value="{{skyObj.number}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Email </label>
+          <input
+            name="Email"
+            id="user_email"
+            type="text"
+            class="form-control "
+            placeholder="Email"
+            required
+            value="{{skyObj.email}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <button class="next-btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-6">
+      <img
+        src="{% static  'img/growth(1).gif' %}"
+        alt="Partner with us image"
+        style="width: 40rem"
+      />
+    </div>
+  </div>
+  <!-- Business info -->
+  <div class="row info-display">
+    <div class="col col-md-6">
+      <div class="buss-info card-info card">
+        <div class="col col-12 form-col">
+          <label for="name" class="form-label"> Business Name </label>
+          <input
+          name="business_heading"
+          type="text"
+          class="form-control"
+          placeholder="Business Heading"
+          id="business_heading"
+          value="{{skyObj.business_heading}}"
+          required
+          />
+        </div>
+        <div class="col col-12 form-col d-flex flex-column">
+          <label for="name" class="form-label"> Business logo </label>
+          <img id="output-1" class="my-logo" alt=" " src="{{skyObj.business_logo.url}}" />
+          <input 
+          type="file" 
+          accept="image/*" 
+          class="" 
+          name="business_logo"  onchange="LoadLogo(event)" 
+          id="business_logo"
+          required
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Gst Number </label>
+          <input
+          name="gst_number"
+          type="text"
+          class="form-control"
+          placeholder="GST Number"
+          id="gst_number"
+          required
+          value="{{skyObj.gst_number}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Year Of Establishment </label>
+          <input
+          name="stablish_year"
+          type="text"
+          class="form-control"
+          placeholder="Year of Stablish"
+          id="stablish_year"
+          required
+          value="{{skyObj.stablish_year}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label">Business Email </label>
+          <input
+            name="Business_Email"
+            id="user_email"
+            type="text"
+            class="form-control "
+            placeholder="Business Email"
+            required
+            value="{{skyObj.email}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Business Phone No. </label>
+          <input
+            name="Business_number"
+            id="user_number"
+            type="text"
+            class="form-control "
+            placeholder="Business Phone No."
+            required
+            value="{{skyObj.number}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Segment" class="form-label">Business Segment</label>
+          <select id="business_tag" name="segment-select" class="form-select" required>
+            <option value="{{skyObj.tag}}">&#160; Choose an option</option>
+            <option value="dog">Automotive</option>
+            <option value="cat">Home Decor</option>
+            <option value="hamster">Medical and wellness</option>
+            <option value="parrot">Food & Restaurant</option>
+            <option value="spider">Real estate</option>
+            <option value="goldfish">Beauty & Salon</option>
+          </select>
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Segment" class="form-label">Business Type</label>
+          <div>
+            <ul>
+              <li>
+                <label for="Online retail"> Online retail</label>
+                <input name="Online retail" type="checkbox" id="online_bus" >
+              </li>
+              <li>
+                <label for="local store"> Local Store</label>
+                <input name="Local Store" type="checkbox" id="local_store" >
+              </li>
+              <li>
+                <label for="service business"> Service Business</label>
+                <input name="Service Business" type="checkbox" id="service_business" >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Website" class="form-label">Website</label>
+          <input
+          name="website"
+          type="text"
+          class="form-control"
+          placeholder="Website Url"
+          id="web_url"
+          required
+          value="{{skyObj.website}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Segment" class="form-label" style="display: block;">Service network</label>
+          <select name="state" id="state" onchange="printCity()">
+            <option value="" disabled selected>Select State</option>
+          </select>
+          <select name="cities" id="cities" >
+            <option value="" disabled selected>Select City</option>
+          </select>
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> State </label>
+          <input
+          name="state"
+          type="text"
+          class="form-control"
+          placeholder="State"
+          id="loc_state"
+          required
+          value="{{skyObj.state}}"
+          />
+        </div> 
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Pincode </label>
+          <input
+          name="pincode"
+          type="text"
+          class="form-control"
+          placeholder="Pincode"
+          id="loc_pincode"
+          required
+          value="{{skyObj.pincode}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Segment" class="form-label">Complete Address</label>
+          <textarea
+          name="address"
+          placeholder="Complete Address"
+          rows="5"
+          cols="5"
+          class="address-area"
+          id="loc_address"
+          required
+        >{{skyObj.address}}</textarea>
+        </div>
+        <div class="col col-12 form-col">
+          <label for="Description" class="form-label">Business Description</label>
+          <textarea
+          name="address"
+          placeholder="Business description"
+          rows="5"
+          cols="5"
+          class="form-control"
+          id="loc_address"
+          required
+        >{{skyObj.address}}</textarea>
+        </div>
+        <div class="col col-12 form-col">
+          <button class="next-btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-6">
+      <img
+        src="{% static  'img/growth(1).gif' %}"
+        alt="Partner with us image"
+        style="width: 40rem"
+      />
+    </div>
+  </div>
+  <!-- Social links -->
+  <div class="row info-display">
+    <div class="col col-md-6">
+      <div class="social-info card-info card">
+        <div class="col col-12 form-col">
+          <label for="name" class="form-label">Instagram </label>
+          <input
+              name="insta"
+              type="text"
+              id="insta_link"
+              class="form-control"
+              placeholder="Insta Link"
+              required
+              value="{{skyObj.insta}}"
+              />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> twitter</label>
+          <input
+              name="twitter"
+              type="text"
+              id="twitter_link"
+              class="form-control"
+              placeholder="Twitter Link"
+              required
+              value="{{skyObj.facebook}}"
+              />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Facebook</label>
+          <input
+              name="facebook"
+              type="text"
+              id="face_link"
+              class="form-control"
+              placeholder="Facebook Link"
+              required
+              value="{{skyObj.twitter}}"
+              />
+        </div>
+        <div class="col col-12 form-col">
+          <label for="position" class="form-label"> Youtube </label>
+          <input
+              name="youtube"
+              type="text"
+              id="youtube_link"
+              class="form-control"
+              placeholder="Youtube Link"
+              required
+              value="{{skyObj.youtube}}"
+            />
+        </div>
+        <div class="col col-12 form-col">
+          <button class="next-btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-6">
+      <img
+        src="{% static  'img/growth(1).gif' %}"
+        alt="Partner with us image"
+        style="width: 40rem"
+      />
+    </div>
+  </div>
+</div>
 <div class="container-xl" id="sec-11">
   <div class="row">
     <div class="col-8">
@@ -457,6 +781,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
 
 {% endblock content %}

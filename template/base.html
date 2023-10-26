@@ -80,6 +80,7 @@
     <link rel="stylesheet" href="{% static 'css/search.css' %}" />
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/card.css' %}" />
   </head>
   <!-- Modal -->
   <div
@@ -93,12 +94,17 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
+          <img
+            src="{% static 'img/top1.gif' %}"
+            alt=""
+            class="query-form-img"
+          />
           <h4 class="modal-title" id="exampleModalLabel">
             Take 1 Step to become our 1 percent
           </h4>
           <button
             type="button"
-            class="close"
+            class="close query-back-btn"
             data-dismiss="modal"
             aria-label="Close"
           >
@@ -106,13 +112,18 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <div>
             <div class="form-group">
               <div class="row">
+                <input
+                  type="hidden"
+                  value="{% url 'query_form_registeration' %}"
+                  class="query-url"
+                />
                 <div class="col-6">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control query-name"
                     id="recipient-name"
                     placeholder="Name"
                   />
@@ -120,7 +131,7 @@
                 <div class="col-6">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control query-phone"
                     id="recipient-name"
                     placeholder="Phone"
                   />
@@ -131,7 +142,7 @@
                 <div class="col-7">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control query-email"
                     id="recipient-name"
                     placeholder="Email"
                   />
@@ -140,24 +151,38 @@
 
               <hr />
               <div class="row justify-content-center">
-                <div class="chip">SEO</div>
-                <div class="chip">SMM</div>
-                <div class="chip">GOOGLD AD</div>
-                <div class="chip">FACEBOOK AD</div>
-                <div class="chip">BRAND SHOOT</div>
-                <div class="chip">AD SHOOT</div>
+                <div class="chip" onclick="queryExtractor(this)">SEO</div>
+                <div class="chip" onclick="queryExtractor(this)">SMM</div>
+                <div class="chip" onclick="queryExtractor(this)">GOOGLD AD</div>
+                <div class="chip" onclick="queryExtractor(this)">
+                  FACEBOOK AD
+                </div>
+                <div class="chip" onclick="queryExtractor(this)">
+                  BRAND SHOOT
+                </div>
+                <div class="chip" onclick="queryExtractor(this)">AD SHOOT</div>
               </div>
             </div>
 
             <div class="form-group">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
+              <textarea
+                class="form-control query-message"
+                id="message-text"
+              ></textarea>
             </div>
-          </form>
+          </div>
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-          <button type="button" class="btn btn-primary">Send message</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="querySubmit()"
+            style="width: 100%; padding: 0.5rem"
+          >
+            Send message
+          </button>
         </div>
       </div>
     </div>
@@ -260,6 +285,7 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/modal.js' %}"></script>
     <script src="{% static 'js/survey.js' %}"></script>
+    <script src="{% static 'js/newsletter.js' %}"></script>
 
     {% endblock bottom %}
   </body>
