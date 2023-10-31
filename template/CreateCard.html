@@ -41,14 +41,14 @@
   </div>
 </div>
 
-
+<form action="" id="sky-details">
 <div class="container">
   <div class="row">
   </div>
   <!-- personal info -->
-  <div class="row ">
+  <div class="row owner-info">
     <div class="col col-md-6">
-      <div class="owner-info card-info card">
+      <div class=" card-info card">
         <div class="col col-12 form-col">
           <label for="name" class="form-label"> Name </label>
           <input
@@ -85,20 +85,9 @@
             value="{{skyObj.number}}"
           />
         </div>
+
         <div class="col col-12 form-col">
-          <label for="position" class="form-label"> Email </label>
-          <input
-            name="Email"
-            id="user_email"
-            type="text"
-            class="form-control "
-            placeholder="Email"
-            required
-            value="{{skyObj.email}}"
-          />
-        </div>
-        <div class="col col-12 form-col">
-          <button class="next-btn btn-primary">Next</button>
+          <button class="next-btn next-1 btn-primary" onclick="form1Hide()">Next</button>
         </div>
       </div>
     </div>
@@ -111,9 +100,9 @@
     </div>
   </div>
   <!-- Business info -->
-  <div class="row info-display">
+  <div class="row buss-info ">
     <div class="col col-md-6">
-      <div class="buss-info card-info card">
+      <div class=" card-info card">
         <div class="col col-12 form-col">
           <label for="name" class="form-label"> Business Name </label>
           <input
@@ -165,7 +154,7 @@
         <div class="col col-12 form-col">
           <label for="position" class="form-label">Business Email </label>
           <input
-            name="Business_Email"
+            name="Email"
             id="user_email"
             type="text"
             class="form-control "
@@ -183,19 +172,19 @@
             class="form-control "
             placeholder="Business Phone No."
             required
-            value="{{skyObj.number}}"
+            value=""
           />
         </div>
         <div class="col col-12 form-col">
           <label for="Segment" class="form-label">Business Segment</label>
           <select id="business_tag" name="segment-select" class="form-select" required>
             <option value="{{skyObj.tag}}">&#160; Choose an option</option>
-            <option value="dog">Automotive</option>
-            <option value="cat">Home Decor</option>
-            <option value="hamster">Medical and wellness</option>
-            <option value="parrot">Food & Restaurant</option>
-            <option value="spider">Real estate</option>
-            <option value="goldfish">Beauty & Salon</option>
+            <option value="Automotive">Automotive</option>
+            <option value="Home Decor">Home Decor</option>
+            <option value="Medical and wellness">Medical and wellness</option>
+            <option value="Food & Restaurant">Food & Restaurant</option>
+            <option value="Real estate">Real estate</option>
+            <option value="Beauty & Salon">Beauty & Salon</option>
           </select>
         </div>
         <div class="col col-12 form-col">
@@ -231,12 +220,46 @@
         </div>
         <div class="col col-12 form-col">
           <label for="Segment" class="form-label" style="display: block;">Service network</label>
-          <select name="state" id="state" onchange="printCity()">
-            <option value="" disabled selected>Select State</option>
-          </select>
-          <select name="cities" id="cities" >
-            <option value="" disabled selected>Select City</option>
-          </select>
+          <div id="list1" class="dropdown-check-list" tabindex="100"> 
+          <span class="anchor">Select State</span>
+          <ul class="items">
+            <li><input type="checkbox" />&nbspAndhra Pradesh</li>
+            <li><input type="checkbox" />&nbspArunachal Pradesh</li>
+            <li><input type="checkbox" />&nbspAssam</li>
+            <li><input type="checkbox" />&nbspBihar</li>
+            <li><input type="checkbox" />&nbspChhattisgarh</li>
+            <li><input type="checkbox" />&nbspGoa</li>
+            <li><input type="checkbox" />&nbspGujarat</li>
+            <li><input type="checkbox" />&nbspHaryana</li>
+            <li><input type="checkbox" />&nbspHimachal Pradesh</li>
+            <li><input type="checkbox" />&nbspJharkhand</li>
+            <li><input type="checkbox" />&nbspKarnataka</li>
+            <li><input type="checkbox" />&nbspKerala</li>
+            <li><input type="checkbox" />&nbspMadhya Pradesh</li>
+            <li><input type="checkbox" />&nbspMaharashtra</li>
+            <li><input type="checkbox" />&nbspManipur</li>
+            <li><input type="checkbox" />&nbspMeghalaya</li>
+            <li><input type="checkbox" />&nbspMizoram</li>
+            <li><input type="checkbox" />&nbspNagaland</li>
+            <li><input type="checkbox" />&nbspOdisha</li>
+            <li><input type="checkbox" />&nbspPunjab</li>
+            <li><input type="checkbox" />&nbspRajasthan</li>
+            <li><input type="checkbox" />&nbspSikkim</li>
+            <li><input type="checkbox" />&nbspTamil Nadu</li>
+            <li><input type="checkbox" />&nbspTelangana</li>
+            <li><input type="checkbox" />&nbspTripura</li>
+            <li><input type="checkbox" />&nbspUttar Pradesh</li>
+            <li><input type="checkbox" />&nbspUttarakhand</li>
+            <li><input type="checkbox" />&nbspWest Bengal</li>
+            <li><input type="checkbox" />&nbspAndaman and Nicobar Islands</li>
+            <li><input type="checkbox" />&nbspChandigarh</li>
+            <li><input type="checkbox" />&nbspDadra and Nagar Haveli and Daman and Diu</li>
+            <li><input type="checkbox" />&nbspLakshadweep</li>
+            <li><input type="checkbox" />&nbspDelhi</li>
+            <li><input type="checkbox" />&nbspPuducherry</li>
+          </ul>
+          
+        </div>
         </div>
         <div class="col col-12 form-col">
           <label for="position" class="form-label"> State </label>
@@ -275,6 +298,18 @@
         >{{skyObj.address}}</textarea>
         </div>
         <div class="col col-12 form-col">
+          <label for="Description" class="form-label">Business TagLine</label>
+          <input
+          name="tagline"
+          type="text"
+          class="form-control"
+          placeholder="Tag Line"
+          id="tag_line"
+          required
+          value="{{skyObj.tagline}}"
+          />
+        </div>
+        <div class="col col-12 form-col">
           <label for="Description" class="form-label">Business Description</label>
           <textarea
           name="address"
@@ -287,7 +322,7 @@
         >{{skyObj.address}}</textarea>
         </div>
         <div class="col col-12 form-col">
-          <button class="next-btn btn-primary">Next</button>
+          <button class="next-btn next-2 btn-primary" onclick="form2Hide()">Next</button>
         </div>
       </div>
     </div>
@@ -300,9 +335,9 @@
     </div>
   </div>
   <!-- Social links -->
-  <div class="row info-display">
+  <div class="row social-info ">
     <div class="col col-md-6">
-      <div class="social-info card-info card">
+      <div class=" card-info card">
         <div class="col col-12 form-col">
           <label for="name" class="form-label">Instagram </label>
           <input
@@ -365,7 +400,8 @@
     </div>
   </div>
 </div>
-<div class="container-xl" id="sec-11">
+</form>
+<div class="container-xl hide-display" id="sec-11">
   <div class="row">
     <div class="col-8">
       <div class="row">

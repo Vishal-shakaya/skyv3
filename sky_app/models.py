@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 from django_quill.fields import QuillField
 from datetime import datetime
-
+# from django_postgres_extensions.models.fields import ArrayField
+from django.contrib.postgres.fields import ArrayField
 
 class Blog(models.Model):
     content = QuillField(null=True, blank=True)
@@ -59,13 +60,16 @@ class SkyCard(models.Model):
     stablish_year = models.CharField(max_length=255, null=True, blank=True)
     website = models.CharField(max_length=500, null=True, blank=True)
     tagline = models.CharField(max_length=255, null=True, blank=True)
-    tag = models.CharField(max_length=255, null=True, blank=True)
+    business_segment = models.CharField(max_length=255, null=True, blank=True)
     business_description = models.TextField(null=True, blank=True)
     state = models.CharField(max_length=255, null=True, blank=True)
-    city = models.CharField(max_length=255, null=True, blank=True)
-    country = models.CharField(max_length=255, null=True, blank=True)
+    # city = models.CharField(max_length=255, null=True, blank=True)
+    # country = models.CharField(max_length=255, null=True, blank=True)
     pincode = models.CharField(max_length=255, null=True, blank=True)
     address = models.TextField(null=True, blank=True)
+    service_area=ArrayField(models.CharField(max_length=100, blank=True, null=True),blank=True, null=True)
+    business_type=ArrayField(models.CharField(max_length=100, blank=True,null=True),blank=True, null=True)
+    
 
     def __str__(self):
         return f'{self.number} {self.business_name}'
