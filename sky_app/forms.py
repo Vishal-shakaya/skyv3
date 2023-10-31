@@ -18,7 +18,7 @@ class CreateCardForm(ModelForm):
                   'name', 'position', 'number', 'whats_app_number',
                   'email', 'insta', 'twitter', 'facebook', 'youtube',
                   'business_name', 'gst_number', 'stablish_year', 'website',
-                  'tagline', 'business_description', 'state',
+                  'tagline', 'business_description','business_segment', 'state',
                   'pincode', 'address'
                   ]
 
